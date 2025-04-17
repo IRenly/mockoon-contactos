@@ -1,0 +1,94 @@
+{
+  "uuid": "123e4567-e89b-12d3-a456-426614174000",
+  "lastMigration": 33,
+  "name": "API Contactos",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 4001,
+  "hostname": "",
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "b4520e14-c1ea-4d4b-825a-7a9d7cbc7489"
+    }
+  ],
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "b4520e14-c1ea-4d4b-825a-7a9d7cbc7489",
+      "type": "http",
+      "method": "post",
+      "endpoint": "contact_validation",
+      "responses": [
+        {
+          "uuid": "5587607a-557a-453b-9df0-93ec1bd34735",
+          "body": "{ \"allowed\": false }",
+          "statusCode": 200,
+          "headers": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "email",
+              "value": "bloqueado@mail.com",
+              "operator": "equals",
+              "invert": false
+            }
+          ],
+          "rulesOperator": "OR",
+          "default": false,
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "5f9a79cd-0500-44ce-a089-35fd03fd2454",
+          "body": "{ \"allowed\": true }",
+          "statusCode": 200,
+          "headers": [],
+          "rules": [],
+          "default": true,
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "documentation": "",
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "proxyMode": false,
+  "cors": true,
+  "headers": [],
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": [],
+  "callbacks": []
+}
